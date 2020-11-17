@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cryptocurrency</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+  <style>
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 50%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #0c131b;
+      box-shadow: 0 0 10px 0 #FFA500;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .name-item input {
+      width: calc(50% - 8px);
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #FFA500;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+  </style>
+ </head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0c131b;">
+  <a class="navbar-brand mb-0 h1" href="index.html">
+  <img src="images/btc-logo.svg" width="30" height="30" class="d-inline-block align-top" alt="logo"> Cryptocurrency </a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item disabled">
+        <a class="nav-link" href="">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="contactus.html">Contact Us</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="walletr.html">Wallet Registration</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="testbox" style="color:white;">
+    <form action="/" method="POST" name = "regForm" id="regForm">
+      <div class="banner">
+        <h1>Blockchain Wallet Registration</h1>
+      </div>
+      <div class="item">
+        <p>UserID</p>
+        <input type="text" id="uid" name="uid"/>
+      </div>
+      <div class="item">
+        <p>Name</p>
+        <div class="name-item">
+          <input type="text" id="fname" name="fname" placeholder="First"/>
+          <input type="text" id="lname" name="lname" placeholder="Last"/>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="item">
+          <p>Email</p>
+          <input type="text" id="email" name="email"/>
+        </div>
+        <div class="item">
+          <p>Phone</p>
+          <input type="text" id="phone" name="phone"/>
+        </div>
+      </div>
+      <div class="item">
+        <p>Type of Account</p>
+        <select>
+          <option value="current">Current</option>
+          <option value="savings">Savings</option>
+          <option value="investment">Salary</option>
+          <option value="current">FD</option>
+          <option value="savings">RD</option>
+          <option value="investment">NRI</option>
+        </select>
+      </div>
+      <div class="item">
+        <p>Address</p>
+        <textarea rows="3" id="address" name="address"></textarea>
+      </div>
+      <div class="item">
+        <p>Address Proof</p>
+        <input type="file" id="addressp" name="addressp"></textarea>
+      </div>
+      <div class="btn-block">
+          <button type="submit" value="Submit" href="/">Submit</button>
+      </div>
+      <br/><div id="error" />
+    </form>
+  </div>
+
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/validate.js"></script>
+</body>
+</html>
