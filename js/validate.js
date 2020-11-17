@@ -57,21 +57,21 @@ form.addEventListener('submit', (e) => {
   }
 
 
-
   if(email.value == '' || email.value == null){
     messages.push('Email is required')
   }
   else{
-    if(!email.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-      message.push('Email format is not valid')
+    if (!email.value.match(/\S+@\S+\.\S+/)){
+      messages.push('Email is not in the valid format')
     }
-  }
+    }
+
 
   if(phone.value == '' || phone.value == null){
     messages.push('Phone number is required')
   }
   else{
-    if(!phone.value.length == 10){
+    if(phone.value.length !== 10){
       messages.push('Phone number must be exactly 10 digits long')
     }
     else{
@@ -80,6 +80,7 @@ form.addEventListener('submit', (e) => {
       }
     }
   }
+
 
   if(address.value == '' || address.value == null){
     messages.push('Address is required')
@@ -90,9 +91,11 @@ form.addEventListener('submit', (e) => {
     }
   }
 
+
   if(addressp.value == 0){
     messages.push('Address proof is required')
   }
+
 
   if (messages.length > 0) {
     e.preventDefault()
