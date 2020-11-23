@@ -34,9 +34,9 @@
   </div>
 </nav>
 
-<h2>The XMLHttpRequest Object</h2>
+<h1>The XMLHttpRequest Object</h1>
 
-<button type="button" onclick="loadDoc()">Info</button>
+<button type="button" onclick="loadDoc()">Get my CD collection</button>
 <br><br>
 <table id="demo"></table>
 
@@ -49,7 +49,7 @@ function loadDoc() {
       myFunction(this);
     }
   };
-  xhttp.open("GET", "data.xml", true);
+  xhttp.open("GET", "cd_catalog.xml", true);
   xhttp.send();
 }
 function myFunction(xml) {
@@ -59,9 +59,9 @@ function myFunction(xml) {
   var x = xmlDoc.getElementsByTagName("CD");
   for (i = 0; i <x.length; i++) {
     table += "<tr><td>" +
-    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
     "</td><td>" +
-    x[i].getElementsByTagName("rank")[0].childNodes[0].nodeValue +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
     "</td></tr>";
   }
   document.getElementById("demo").innerHTML = table;
