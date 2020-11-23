@@ -136,8 +136,10 @@
       <div class="item">
         <p>Name</p>
         <div class="name-item">
-          <input type="text" id="fname" name="fname" placeholder="First"/>
-          <input type="text" id="lname" name="lname" placeholder="Last"/>
+          <input type="text" name="fname" placeholder="First" id="fname"
+onchange="document.cookie='fname='+escape(this.value)+'; expires=Thu, 31 Dec 2037 12:00:00 GMT';"/>
+          <input type="text" name="lname" placeholder="Last" id="lname"
+onchange="document.cookie='fname='+escape(this.value)+'; expires=Thu, 31 Dec 2037 12:00:00 GMT';"/>
         </div>
       </div>
       <div class="contact-item">
@@ -180,39 +182,17 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/validate.js"></script>
 <script>
-function setCookie(cname,cvalue,exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  var expires = "expires=" + d.toGMTString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+if (location.href.indexOf('chart.php')<0 && location.href.indexOf('formdataedit.php')<0)
+{
+if (document.u5form.fname.value=='' && document.cookie.indexOf('fname=')>-1)
+{
+document.u5form.fname.value=('; '+document.cookie).split('; fname=')[1].split(';')[0];
+document.u5form.fname.value=unescape(document.u5form.fname.value);
 }
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
+if (document.u5form.lname.value=='' && document.cookie.indexOf('lname=')>-1){
+document.u5form.lname.value=('; '+document.cookie).split('; lname=')[1].split(';')[0];
+document.u5form.lname.value=unescape(document.u5form.lname.value);
 }
-
-function checkCookie() {
-  var user=getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
-  } else {
-     user = prompt("Please enter your name:","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-  }
 }
 </script>
 </body>
