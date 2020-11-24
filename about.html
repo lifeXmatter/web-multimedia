@@ -7,6 +7,14 @@
 	<title>Cryptocurrency</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+  <style>
+  td,th
+            {
+                font-size:larger;
+                padding:21px;
+                text-align:center !important;
+            }
+  </style>
  </head>
 <body>
 
@@ -66,7 +74,7 @@ function loadDoc() {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr><th>name</th><th>coin</th></tr>";
+  var table="<tr bgcolor="#FFA500"><th style="text-align:left">NAME</th><th style="text-align:left">COIN</th></tr>";
   var x = xmlDoc.getElementsByTagName("coin");
   for (i = 0; i <x.length; i++) {
     table += "<tr><td>" +
