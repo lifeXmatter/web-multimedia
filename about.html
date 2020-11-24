@@ -63,7 +63,7 @@
 <button type="button" onclick="loadDoc()">Get First Two Columns</button>
 </div>
 <br><br>
-<table border="1" id="demo" style="color:white"></table>
+<table border="1" id="demo" style="color:white; background:#FFA500"></table>
 </div>
 </div>
 </div>
@@ -83,7 +83,7 @@ function loadDoc() {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr><th>name</th><th>coin</th></tr>";
+  var table="<tr><th>Coin Rank</th><th>Coin Name</th></tr>";
   var x = xmlDoc.getElementsByTagName("coin");
   for (i = 0; i <x.length; i++) {
     table += "<tr><td>" +
