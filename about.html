@@ -8,12 +8,19 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
   <style>
-  td,th
-            {
-                font-size:larger;
-                padding:21px;
-                text-align:center !important;
-            }
+  button {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #FFA500;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  }
+  .btn-block {
+  margin-top: 10px;
+  }
   </style>
  </head>
 <body>
@@ -49,12 +56,14 @@
 </iframe>
 </div>
 </div>
-<h1>Dynamic Data Filtration</h1>
+<h1 style="color:white">-> Dynamic Data Filtration</h1><br/>
 <div class="row">
   <div class="col-md-6">
+<div class="btn-block">
 <button type="button" onclick="loadDoc()">Get First Two Columns</button>
+</div>
 <br><br>
-<table id="demo"></table>
+<table border="1" id="demo" style="color:white"></table>
 </div>
 </div>
 </div>
@@ -74,7 +83,7 @@ function loadDoc() {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr bgcolor="#FFA500"><th style="text-align:left">NAME</th><th style="text-align:left">COIN</th></tr>";
+  var table="<tr><th>name</th><th>coin</th></tr>";
   var x = xmlDoc.getElementsByTagName("coin");
   for (i = 0; i <x.length; i++) {
     table += "<tr><td>" +
